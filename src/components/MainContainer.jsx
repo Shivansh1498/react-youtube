@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import CardList from "./CardList";
-import { YOUTUBE_VIDEO_LIST_API } from "../utils/constants";
+import {
+  YOUTUBE_VIDEO_LIST_API,
+  YOUTUBE_VIDEO_SEARCH_API,
+} from "../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { addVideos } from "../store/slices/allVideoSlice";
 import Shimmer from "./Shimmer";
@@ -15,7 +18,13 @@ const MainContainer = () => {
     dispatch(addVideos(json.items));
   };
 
+  // const getSearchResult = async () => {
+  //   const data = await fetch(YOUTUBE_VIDEO_SEARCH_API("tiger 3 teaser"));
+  //   const json = await data.json();
+  //   console.log(json.items[0]);
+  // };
   useEffect(() => {
+    // getSearchResult();
     getYoutubeVideoData();
   }, []);
 

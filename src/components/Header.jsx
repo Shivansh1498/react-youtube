@@ -2,6 +2,7 @@ import React from "react";
 import youtubeLogo from "../assets/youtubeLogo.png";
 import { useDispatch } from "react-redux";
 import { toggleSidebar } from "../store/slices/sidebarConfigSlice";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ const Header = () => {
   };
 
   return (
-    <div className="flex items-center justify-between py-4 px-5 shadow-lg fixed w-full bg-white">
+    <div className="flex items-center justify-between py-4 px-5 shadow-lg fixed w-full bg-white z-[1]">
       <div className="flex items-center">
         <button onClick={handleSidebarView}>
           <svg
@@ -29,11 +30,13 @@ const Header = () => {
             />
           </svg>
         </button>
-        <img
-          src={youtubeLogo}
-          alt="youtube logo"
-          className="w-20 h-auto ml-4"
-        />
+        <Link to="/">
+          <img
+            src={youtubeLogo}
+            alt="youtube logo"
+            className="w-20 h-auto ml-4"
+          />
+        </Link>
       </div>
       <div className="flex items-center">
         <input

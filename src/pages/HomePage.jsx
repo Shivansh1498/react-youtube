@@ -6,7 +6,6 @@ import routes from "../routes";
 const HomePage = () => {
   return (
     <div>
-      <Header />
       <RouterProvider router={routes} />
     </div>
   );

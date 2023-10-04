@@ -1,13 +1,19 @@
 import { createBrowserRouter } from "react-router-dom";
-import Body from "./components/Body";
 import MainContainer from "./components/MainContainer";
 import VideoPlayingContainer from "./components/VideoPlayingContainer";
 import Error from "./pages/Error";
+import Body from "./components/Body";
+import Header from "./components/Header";
 
 const routes = createBrowserRouter([
   {
     path: "/",
-    element: <Body />,
+    element: (
+      <>
+        <Header />
+        <Body />
+      </>
+    ),
     errorElement: <Error />,
     children: [
       {
